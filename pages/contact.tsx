@@ -10,7 +10,7 @@ const Contact = (props: Props) => {
   const { page } = props;
 
   return (
-    <div>
+    <div className="container mx-auto text-center">
       <PortableText value={page.body.en} />
     </div>
   );

@@ -11,13 +11,13 @@ const Services = (props: Props): React.ReactElement => {
   const { page, services } = props;
 
   return (
-    <>
+    <div className="container mx-auto">
       <div>{page.title}</div>
 
       {services.map((service) => (
         <ServiceItem service={service} key={service._id} />
       ))}
-    </>
+    </div>
   );
 };
 
