@@ -1,6 +1,7 @@
 import { getPageBySlug } from "../lib/sanity";
 import { PageProps } from "../lib/types";
 import { PortableText } from "@portabletext/react";
+import { getLocaleContent } from "../lib/locale";
 
 type Props = {
   page: PageProps;
@@ -8,14 +9,13 @@ type Props = {
 
 const Home = (props: Props) => {
   const { page } = props;
-  console.log(props);
-
-  const title = page.title;
-  console.log(title);
 
   return (
-    <div>
-      <PortableText value={page.body.en} />
+    <div
+      className="fixed left-0 top-0 bottom-0 right-0 flex justify-center items-center !bg-cover text-5xl text-white"
+      style={{ background: `url(${page.backgroundImage}) no-repeat center` }}
+    >
+      <PortableText value={getLocaleContent(page.body)} />
     </div>
   );
 };

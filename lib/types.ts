@@ -1,13 +1,20 @@
 import type { PortableTextBlock } from "@portabletext/types";
 
-type LocaleBlockText = {
+export type LocaleObject = {
   en: PortableTextBlock;
   es: PortableTextBlock;
 };
 
+type SanityAsset = {
+  asset: {
+    url: string;
+  };
+};
+
 export type PageProps = {
+  backgroundImage: string;
   title: string;
-  body: LocaleBlockText;
+  body: LocaleObject;
   _id: string;
 };
 
@@ -17,7 +24,7 @@ export type ServiceItemProps = {
   images: [];
   sessionVariants: SessionVariantProps[];
   callToAction: string;
-  notes: LocaleBlockText;
+  notes: LocaleObject;
   _id: string;
   tags: string[];
 };
@@ -26,5 +33,5 @@ export type SessionVariantProps = {
   sessionName: string;
   sessionPrice: number;
   _id: string;
-  sessionDetails: LocaleBlockText;
+  sessionDetails: LocaleObject;
 };
