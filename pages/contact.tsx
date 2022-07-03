@@ -1,11 +1,28 @@
-import type { NextPage } from "next";
+import { getPageBySlug } from "../lib/sanity";
+import { Page } from "../lib/types";
+import { PortableText } from "@portabletext/react";
 
-const Contact: NextPage = () => {
+type ContactProps = {
+  page: Page;
+};
+
+const Contact = (props: ContactProps) => {
+  const { page } = props;
+
   return (
     <div>
-      <h1>Contact</h1>
+      <PortableText value={page.body.en} />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const page = await getPageBySlug("contact");
+
+  return {
+    props: { page: page[0] },
+    revalidate: 1,
+  };
+}
 
 export default Contact;
