@@ -1,15 +1,14 @@
 import { getPageBySlug, getServices } from "../lib/sanity";
-import { Page } from "../lib/types";
+import { PageProps, ServiceItemProps } from "../lib/types";
 import ServiceItem from "../components/services/ServiceItem";
 
-type ServiceProps = {
-  page: Page;
+type Props = {
+  page: PageProps;
+  services: ServiceItemProps[];
 };
 
-const Services = (props: ServiceProps) => {
+const Services = (props: Props): React.ReactElement => {
   const { page, services } = props;
-
-  console.log({ services });
 
   return (
     <>

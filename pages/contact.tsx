@@ -1,12 +1,12 @@
 import { getPageBySlug } from "../lib/sanity";
-import { Page } from "../lib/types";
+import { PageProps } from "../lib/types";
 import { PortableText } from "@portabletext/react";
 
-type ContactProps = {
-  page: Page;
+type Props = {
+  page: PageProps;
 };
 
-const Contact = (props: ContactProps) => {
+const Contact = (props: Props) => {
   const { page } = props;
 
   return (
