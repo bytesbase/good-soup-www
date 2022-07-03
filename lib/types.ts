@@ -13,6 +13,7 @@ type SanityAsset = {
 
 export type PageProps = {
   backgroundImage: string;
+  subtitle?: string;
   title: string;
   body: LocaleObject;
   _id: string;

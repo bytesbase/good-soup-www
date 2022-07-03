@@ -9,15 +9,27 @@ type Props = {
 
 const Services = (props: Props): React.ReactElement => {
   const { page, services } = props;
-
   return (
-    <div className="container mx-auto">
-      <div>{page.title}</div>
+    <>
+      <div className="pageClass py-24">
+        <h2 className="text-center">{page.title}</h2>
+        <p className="text-center">{page.subtitle}</p>
 
-      {services.map((service) => (
-        <ServiceItem service={service} key={service._id} />
-      ))}
-    </div>
+        <ul className="my-12 flex space-x-4 mx-auto">
+          {services.map((service) => (
+            <li>{service.name}</li>
+          ))}
+        </ul>
+
+        {services.map((service, index) => (
+          <ServiceItem
+            service={service}
+            key={service._id}
+            isLast={index === services.length - 1}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

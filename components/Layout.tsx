@@ -10,7 +10,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <link rel="stylesheet" href="https://use.typekit.net/vte3dhv.css" />
       </Head>
       <Header />
-      <main>{children}</main>
+      <main className="grow flex">{children}</main>
       <Footer />
     </div>
   );

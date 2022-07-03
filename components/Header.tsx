@@ -7,15 +7,15 @@ export default function Header() {
   const router = useRouter();
   const lightTheme = router.asPath === "/";
 
-  const headerCss = `relative z-50 container mx-auto flex justify-between h-24 items-center ${
-    lightTheme ? "text-white" : "text-black"
+  const headerCss = `relative z-50 container mx-auto flex justify-between h-[80px] items-center ${
+    lightTheme ? "text-white" : "text-black sticky top-0 bg-white bg-opacity-90"
   }`;
 
   return (
     <header className={headerCss}>
-      <div className="text-2xl" id="logo">
+      <div id="logo">
         <Link href="/">
-          <a>good soup studio.</a>
+          <a className="text-3xl"> good soup studio.</a>
         </Link>
       </div>
 

@@ -17,13 +17,39 @@ body {
   font-style: normal;
 }
 
+.pageClass {
+  @apply container mx-auto flex flex-col grow;
+}
+.pageClass.center {
+  @apply justify-center items-center;
+}
+
 h1 {
   @apply text-5xl font-semibold mb-3;
+}
+
+h2 {
+  @apply text-4xl mb-3;
+}
+
+h3 {
+  @apply text-3xl mb-3;
+}
+
+h4 {
+  @apply text-2xl mb-3;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p,
+div,
+span,
+a {
+  font-size: 18px;
 }
 
 * {
