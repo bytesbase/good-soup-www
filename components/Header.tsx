@@ -54,7 +54,7 @@ export default function Header() {
         </ul>
         <ActiveLink activeClassName="bg-gray-200 text-black" href="/booking">
           <button className="ml-4 bg-gs-green px-3 py-2 rounded-md text-white uppercase">
-            Book your session
+            Book
           </button>
         </ActiveLink>
       </nav>
@@ -91,7 +91,7 @@ export default function Header() {
               </ul>
               <ActiveLink activeClassName="text-gs-green" href="/booking">
                 <button className="mt-8 mx-16 bg-gs-green px-3 py-2 rounded-md text-white uppercase">
-                  Book your session
+                  Book
                 </button>
               </ActiveLink>
             </div>

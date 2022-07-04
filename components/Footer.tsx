@@ -8,13 +8,11 @@ import {
 export default function Footer(): React.ReactElement {
   const router = useRouter();
   const isHomePage = router.asPath === "/";
-  const noBackground = ["/about", "/contact", "/booking"].includes(
-    router.asPath
-  );
+  const hasBackground = ["/services"].includes(router.asPath);
   const currentYear = new Date().getFullYear();
 
   const footerClasses = ` w-full flex items-center justify-center flex-col py-16 ${
-    noBackground ? "text-black" : "bg-[#D3DFDF] text-white"
+    hasBackground ? "bg-[#D3DFDF] text-white" : "text-black"
   }`;
 
   return !isHomePage ? (

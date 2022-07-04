@@ -1,17 +1,19 @@
-import React from "react";
+import React, { ChangeEventHandler } from "react";
 
 type Props = {
   name: string;
   label: string;
   type: string;
+  required: boolean;
   placeholder: string;
-  onChange: () => void;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 };
 
 export default function FormInput({
   name,
   label,
   type,
+  required,
   onChange,
   placeholder,
 }: Props) {
@@ -23,6 +25,7 @@ export default function FormInput({
         type={type}
         className="px-4 py-3 w-full"
         onChange={onChange}
+        required={required}
         placeholder={placeholder}
       />
     </div>

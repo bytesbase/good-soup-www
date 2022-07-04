@@ -6,6 +6,7 @@ import { ServiceItemProps } from "../../lib/types";
 import SessionVariant from "./SessionVariant";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Link from "next/link";
 
 type Props = {
   service: ServiceItemProps;
@@ -53,10 +54,11 @@ export default function ServiceItem({ service, isLast }: Props) {
           value={getLocaleContent(notes)}
           components={listSerializer as PortableTextComponents}
         />
-
-        <button className="bg-gs-green px-3 py-2 rounded-md text-white mt-8 mx-auto block">
-          {callToAction}
-        </button>
+        <Link href="/booking">
+          <button className="bg-gs-green px-3 py-2 rounded-md text-white mt-8 mx-auto block">
+            {callToAction}
+          </button>
+        </Link>
       </div>
 
       {!isLast && <div className="w-12 my-14 h-1 bg-[#D3DFDF] block mx-auto" />}
