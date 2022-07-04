@@ -13,7 +13,7 @@ const Home = (props: Props) => {
 
   return (
     <div
-      className="min-h-screen min-w-[100vw] flex justify-center items-center !bg-cover text-5xl text-white"
+      className="min-h-screen min-w-[100vw] flex justify-center items-center !bg-cover text-white"
       style={{ background: `url(${page.backgroundImage}) no-repeat center` }}
     >
       <div className="container mx-auto relative z-30 px-6 ">

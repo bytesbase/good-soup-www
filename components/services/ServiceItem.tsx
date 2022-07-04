@@ -1,6 +1,6 @@
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 import React from "react";
-import { urlFor } from "../../lib/client";
+import { listSerializer, markSerializer, urlFor } from "../../lib/client";
 import { getLocaleContent } from "../../lib/locale";
 import { ServiceItemProps } from "../../lib/types";
 import SessionVariant from "./SessionVariant";
@@ -33,7 +33,7 @@ export default function ServiceItem({ service, isLast }: Props) {
         {images.map((image) => (
           <div key={image}>
             <img
-              className="object-cover h-[25vh] md:h-[60vh] max-h-[800px] w-96"
+              className="object-cover h-[25vh] md:h-[60vh] max-h-[600px] w-96"
               src={urlFor(image).width(1000).url()}
               alt=""
             />
@@ -49,7 +49,10 @@ export default function ServiceItem({ service, isLast }: Props) {
         </div>
 
         <h4 className="underline">Additional Notes</h4>
-        <PortableText value={getLocaleContent(notes)} />
+        <PortableText
+          value={getLocaleContent(notes)}
+          components={listSerializer as PortableTextComponents}
+        />
 
         <button className="bg-gs-green px-3 py-2 rounded-md text-white mt-8 mx-auto block">
           {callToAction}

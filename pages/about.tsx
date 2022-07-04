@@ -1,6 +1,7 @@
 import { getPageBySlug } from "../lib/sanity";
 import { PageProps } from "../lib/types";
-import { PortableText } from "@portabletext/react";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
+import { markSerializer } from "../lib/client";
 
 type Props = {
   page: PageProps;
@@ -11,7 +12,10 @@ const About = (props: Props) => {
 
   return (
     <div className="pageClass center text-center">
-      <PortableText value={page.body.en} />
+      <PortableText
+        value={page.body.en}
+        components={markSerializer as PortableTextComponents}
+      />
     </div>
   );
 };
