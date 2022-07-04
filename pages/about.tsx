@@ -10,7 +10,7 @@ const About = (props: Props) => {
   const { page } = props;
 
   return (
-    <div className="pageClass center">
+    <div className="pageClass center text-center">
       <PortableText value={page.body.en} />
     </div>
   );

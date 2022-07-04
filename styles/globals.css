@@ -17,27 +17,74 @@ body {
   font-style: normal;
 }
 
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: black;
+  height: 3px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button.light,
+.menu-button.light::before,
+.menu-button.light::after {
+  background-color: white;
+}
+
+.menu-button::before,
+.menu-button::after {
+  position: absolute;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+.menu-button.open {
+  background: rgba(255, 255, 255, 0);
+}
+.menu-button.open::before {
+  background-color: white;
+  margin-top: 0px;
+  transform: rotate(220deg);
+}
+
+.menu-button.open::after {
+  background-color: white;
+  margin-top: 0px;
+  transform: rotate(-220deg);
+}
+
 .pageClass {
-  @apply container mx-auto flex flex-col grow;
+  @apply container mx-auto flex flex-col md:grow;
 }
 .pageClass.center {
   @apply justify-center items-center;
 }
 
 h1 {
-  @apply text-5xl font-semibold mb-3;
+  @apply text-[26px] md:text-5xl font-semibold mb-3 leading-normal;
 }
 
 h2 {
-  @apply text-4xl mb-3;
+  @apply text-2xl md:text-4xl mb-3;
 }
 
 h3 {
-  @apply text-3xl mb-3;
+  @apply text-2xl md:text-3xl mb-3;
 }
 
 h4 {
-  @apply text-2xl mb-3;
+  @apply text-2xl md:text-2xl mb-3;
 }
 
 a {

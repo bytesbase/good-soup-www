@@ -28,11 +28,12 @@ export default function ServiceItem({ service, isLast }: Props) {
         showStatus={false}
         interval={10000}
         showIndicators={false}
+        swipeable={false}
       >
         {images.map((image) => (
-          <div>
+          <div key={image}>
             <img
-              className="object-cover h-[800px] w-96"
+              className="object-cover h-[25vh] md:h-[60vh] max-h-[800px] w-96"
               src={urlFor(image).width(1000).url()}
               alt=""
             />
@@ -41,7 +42,7 @@ export default function ServiceItem({ service, isLast }: Props) {
       </Carousel>
 
       <div className="px-9">
-        <div className="grid grid-cols-2 gap-8 my-8">
+        <div className="grid md:grid-cols-2 gap-8 my-8">
           {sessionVariants.map((variant) => (
             <SessionVariant variant={variant} key={variant.sessionName} />
           ))}
