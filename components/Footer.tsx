@@ -8,7 +8,9 @@ import {
 export default function Footer(): React.ReactElement {
   const router = useRouter();
   const isHomePage = router.asPath === "/";
-  const noBackground = ["/about", "/contact"].includes(router.asPath);
+  const noBackground = ["/about", "/contact", "/booking"].includes(
+    router.asPath
+  );
   const currentYear = new Date().getFullYear();
 
   const footerClasses = ` w-full flex items-center justify-center flex-col py-16 ${

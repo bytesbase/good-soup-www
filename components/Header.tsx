@@ -52,9 +52,11 @@ export default function Header() {
             </ActiveLink>
           </li>
         </ul>
-        <button className="ml-4 bg-gs-green px-3 py-2 rounded-md text-white uppercase">
-          Book your session
-        </button>
+        <ActiveLink activeClassName="bg-gray-200 text-black" href="/booking">
+          <button className="ml-4 bg-gs-green px-3 py-2 rounded-md text-white uppercase">
+            Book your session
+          </button>
+        </ActiveLink>
       </nav>
 
       <div className="md:hidden flex">
@@ -87,9 +89,11 @@ export default function Header() {
                   </ActiveLink>
                 </li>
               </ul>
-              <button className="mt-8 mx-16 bg-gs-green px-3 py-2 rounded-md text-white uppercase">
-                Book your session
-              </button>
+              <ActiveLink activeClassName="text-gs-green" href="/booking">
+                <button className="mt-8 mx-16 bg-gs-green px-3 py-2 rounded-md text-white uppercase">
+                  Book your session
+                </button>
+              </ActiveLink>
             </div>
           </nav>
         )}
