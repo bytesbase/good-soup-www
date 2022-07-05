@@ -44,8 +44,7 @@ const Booking = ({ page }: Props) => {
     inquiryType.PORTRAIT,
     inquiryType.PRODUCT,
     inquiryType.DRONE,
-    inquiryType.FOOD,
-    inquiryType.DOCU,
+    inquiryType.OTHER,
     inquiryType.GENERAL,
   ];
 

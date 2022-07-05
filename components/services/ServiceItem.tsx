@@ -27,7 +27,7 @@ export default function ServiceItem({ service, isLast }: Props) {
         showThumbs={false}
         autoPlay
         showStatus={false}
-        interval={10000}
+        interval={3000}
         showIndicators={false}
         swipeable={false}
       >

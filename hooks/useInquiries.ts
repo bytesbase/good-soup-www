@@ -8,8 +8,7 @@ export enum inquiryType {
   PORTRAIT = "Portrait",
   PRODUCT = "Product",
   DRONE = "Drone services",
-  FOOD = "Food",
-  DOCU = "Documentary",
+  OTHER = "Other",
   GENERAL = "General Question",
 }
 

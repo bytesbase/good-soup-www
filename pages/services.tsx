@@ -9,6 +9,8 @@ type Props = {
 
 const Services = (props: Props): React.ReactElement => {
   const { page, services } = props;
+  console.log({ services });
+
   return (
     <>
       <div className="pageClass py-12 md:py-16">
