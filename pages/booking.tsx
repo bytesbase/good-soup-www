@@ -70,24 +70,8 @@ const Booking = ({ page }: Props) => {
     setInquiry({ ...newInquiry, type: inquiry });
   };
 
-  const updateInquiryField = (
-    field: string,
-    event: React.BaseSyntheticEvent
-  ) => {
-    const value = event.target.value;
-    setInquiry({ ...newInquiry, [field]: value });
-  };
-
-  const sendInquiry = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    console.log({ newInquiry });
-
-    mutateAsync(newInquiry).then(
-      (res) => setStatus("done"),
-      (err) => setStatus("error")
-    );
-  };
+  const showHideByType = (type: inquiryType): string =>
+    newInquiry.type === type ? "block" : "hidden";
 
   return (
     <>
@@ -127,23 +111,17 @@ const Booking = ({ page }: Props) => {
               src="https://www.honeybook.com/p.png?pid=62c58c07174b5900085b3312"
             />
 
-            <>
-              <div
-                className={
-                  newInquiry.type === inquiryType.WEDDING ? "block" : "hidden"
-                }
-              >
-                <div className="hb-p-62c58c07174b5900085b3312-1" />
-              </div>
+            <div
+              className={`${showHideByType(
+                inquiryType.WEDDING
+              )} hb-p-62c58c07174b5900085b3312-1`}
+            />
 
-              <div
-                className={
-                  newInquiry.type === inquiryType.PORTRAIT ? "block" : "hidden"
-                }
-              >
-                <div className="hb-p-62c58c07174b5900085b3312-2"></div>
-              </div>
-            </>
+            <div
+              className={`${showHideByType(
+                inquiryType.PORTRAIT
+              )} hb-p-62c58c07174b5900085b3312-2`}
+            />
           </>
         )}
       </div>
