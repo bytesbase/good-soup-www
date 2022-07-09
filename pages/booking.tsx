@@ -122,6 +122,30 @@ const Booking = ({ page }: Props) => {
                 inquiryType.PORTRAIT
               )} hb-p-62c58c07174b5900085b3312-2`}
             />
+
+            <div
+              className={`${showHideByType(
+                inquiryType.PRODUCT
+              )} hb-p-62c58c07174b5900085b3312-3`}
+            />
+
+            <div
+              className={`${showHideByType(
+                inquiryType.DRONE
+              )} hb-p-62c58c07174b5900085b3312-4`}
+            />
+
+            <div
+              className={`${showHideByType(
+                inquiryType.OTHER
+              )} hb-p-62c58c07174b5900085b3312-5`}
+            />
+
+            <div
+              className={`${showHideByType(
+                inquiryType.GENERAL
+              )} hb-p-62c58c07174b5900085b3312-6`}
+            />
           </>
         )}
       </div>
